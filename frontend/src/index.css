@@ -1,68 +1,38 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-primary-base: oklch(0.55 0.24487447363678977 266.68112805248813);
+  --color-primary-darker: oklch(0.4707 0.2134 266.52);
+  --color-primary-darkest: oklch(0.45 0.2134 266.52);
+  --color-primary-light: oklch(0.9592 0.01925307803944879 273.2377448835341);
+  --color-error-base: oklch(64.71% 0.2288 22.47);
+  --color-error-dark: oklch(55.6% 0.2038 23.58);
+  --color-error-light: oklch(95.66% 0.021908202400530506 10.598716013236197);
+  --color-facebook: oklch(53.64% 0.2049 258.76);
+  --shadow-regular-xs: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --color-blur-effect: #02090d3d;
 }
 
-a {
+.text-sm {
+  font-size: 0.82rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.006em;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.text-sm {
+  line-height: 1.25rem;
+  letter-spacing: -0.006em;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.text-paragraph-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.dark {
+  --color-blur-effect: #535b6452 !important;
 }
